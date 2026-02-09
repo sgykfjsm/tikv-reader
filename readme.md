@@ -32,14 +32,18 @@ Go 1.21 or higher is required.
 
 ```bash
 # Clone the repository
-git clone <your-repo-url>
+git clone 'git@github.com:sgykfjsm/tikv-reader.git'
 cd tikv-reader
 
 # Tidy dependencies
+git submodule update --init --recursive
 go mod tidy
+go work vendor
+# or `just mod_update`
 
 # Build
 go build -o tikv-reader main.go
+# or `just build`
 ```
 
 ## Usage
